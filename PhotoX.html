@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="Us-en">
+<head>
+	<meta name="viewport" name="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="All file for jQeury and Bootstrap/Bootstrap.css">
+	<script type="text/javascript"  src="All file for jQeury and Bootstrap/all.js"></script><!--fontawesome -->
+	<script type="text/javascript" src="All file for jQeury and Bootstrap/Bootstrap.js"></script>
+	<script type="text/javascript" src="All file for jQeury and Bootstrap/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="All file for jQeury and Bootstrap/bootstrap.bundle.min.js"></script>
+	<link rel="icon" href="images/title-img.png">
+	<title>Photo_X</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("button#close_tags").click(function(){
+		$(this).toggleClass("change");
+	});
+	$(window).scroll(function(){
+		var x = $(this).scrollTop();
+		if(x >= 650){
+			$(".img-customer").addClass("Toright");
+			$(".paragraph-anim").addClass("Toleft");
+		}
+		else{
+			$(".img-customer").removeClass("Toright");
+			$(".paragraph-anim").removeClass("Toleft");	
+		}
+	});
+	$(window).scroll(function(){
+		var  y = $(this).scrollTop();
+		if(y >= 320){
+			$(".bgopacity").addClass("top-navbar-j");
+		}else{
+			$(".bgopacity").removeClass("top-navbar-j");
+		}
+	});
+	$(".custome-line").click(function(){
+		var attributes = $(this).attr('data-filter');
+		if(attributes==='All'){
+			$(".filter").show(300);
+		} else{
+			$(".filter").not("."+attributes).hide(300);
+			$(".filter").filter("."+attributes).show(300);
+		}
+	});
+	$(window).scroll(function(){
+		var x = $(this).scrollTop();
+		console.log(x);
+		if(x >= 3950){
+			$(".card-1").addClass("animsh");
+			$(".card-2").addClass("animsh-1");
+			$(".card-3").addClass("animsh-2");
+		}
+		else
+		{
+			$(".card-1").removeClass("animsh");
+			$(".card-2").removeClass("animsh-1");
+			$(".card-3").removeClass("animsh-2");
+		}
+	});
+});	
+</script>	
+<style>
+	header{
+		height:100vh;
+		background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)), url("images/header-img.jpeg") no-repeat center center /cover;
+	}
+	.banner{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%); 
+		width: 80%;
+	}
+	.titles{
+		animation:anim 2s;
+	}
+	.paragraph{
+		animation:anim 2s 0.3s backwards;
+	}
+	@keyframes anim{
+		0%{
+			transform: translateX(-100px);
+			opacity:0;
+		}
+		100%{
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+	.motion{
+		transition: all 0.2s;
+		font-size: 30px;
+	}
+	.motion:hover{
+		transition: all 0.2s;
+		color:#666;
+	}
+	.top-navbar-j{
+		padding:6px 80px;
+	}
+	.bgopacity{
+		opacity: 0.8;
+		background:black; 
+		transition: all 0.7s;
+	}
+	.li_links{
+		color:white;
+		font-size:20px;
+		transition: all 0.4s;
+	}
+	.li_links:hover{
+		color:#666;
+	}
+	.x{
+		color:white;
+		transition: all 0.5s;
+	}
+	.x:hover{
+		color:red;
+	}
+	.line1, .line2, .line3{
+		width: 20px;
+		height: 3px;
+		background-color: white;
+		margin:5px;
+		transition:all .4s;
+	}
+	.change .line1{
+		transform: rotate(45deg) translate(6px,6px);
+	}
+	.change .line2{
+		opacity: 0;
+	}
+	.change .line3{
+		transform: rotate(-45deg) translate(5px,-6px)
+	}
+	.Toleft{
+		animation: Toleft 3s;
+	}
+	@keyframes Toleft{
+		0%{
+			transform: translateX(140px);
+			opacity: 0;
+		}
+		100%{
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	.Toright{
+		animation: Toright 3s;
+	}
+	@keyframes Toright{
+		0%{
+			transform: translateX(-140px);
+			opacity: 0;
+		}
+		100%{
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	.head{
+		border:none;
+		/*box-shadow: 4px 5px 20px #222;*/
+	}
+	.img-sub{
+		position:absolute;
+		top:70%;
+		right:0;
+		padding:10px;
+		background-color: #222;
+		opacity: .6;
+		transition: all .7s;
+	}
+	.img-sub:hover{
+		opacity: 1;
+		cursor: pointer;
+	}
+	.custome-line{
+		cursor: pointer;
+		user-select: none;
+	}
+	.bground{
+		background:linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,.5)) ,  url("images/pricing-card-bg.jpeg");
+		background-position:center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		box-shadow: 15px 40px 50px #555;
+	}
+	.links{
+
+		background :#f5593d;
+		width: 100px;
+		border-radius: 30px;
+		margin:auto;
+		transition: all 0.2s;
+	}
+	.links:hover{
+		transform: translateY(-2px);
+	}
+	.animsh{
+		transition: 1s;
+		opacity: 1;
+		animation: animate-1 2s;
+	}
+	@keyframes animate-1{
+		0%{
+			transform: translateX(-100px);
+			opacity: 0;
+		}
+		100%{
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+	.animsh-1{
+		transition: 1s;
+		opacity: 1;
+		animation: animate-2 2s;	
+	}
+	@keyframes animate-2{
+		0%{
+			transform: translateY(-100px);
+			opacity: 0;
+		}
+		100%{
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
+	.animsh-2{
+		transition: 1s;
+		opacity: 1;
+		animation: animate-3 2s;	
+	}
+	@keyframes animate-3{
+		0%{
+			transform: translateX(200px);
+			opacity: 0;
+		}
+		100%{
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+	/* contacts */
+	.contacts{
+		background:linear-gradient(105deg,
+		rgba(10,10,23,.90)0%,
+		rgba(10,10,23,.95) 50%, 
+		transparent 50%),url("images/form-img.jpeg") no-repeat center center /cover;
+	}
+	.input{
+		background:transparent;
+		border-color: transparent;
+		border-bottom: 1px solid white;
+		border-radius: 0px; 
+		color:white;
+		transition: all .5s;
+	}
+	.input:focus{
+		background:transparent;
+		border-color: transparent;
+		border-bottom: 1px solid #bb2333; 
+		box-shadow:none;
+		color:white;
+	}
+	.submit-btn{
+		background-color: #f5593d;
+		transition: all .3s;
+	}
+	.submit-btn:focus,.submit-btn:hover{
+		background-color: #ff593d;
+		transform: translateY(-2px);
+	}
+	.label{
+		color:#777;
+		display: block;
+		margin-top: -60px;
+		font-size: 17px;
+		transition: all .4s;
+	}
+	.input:placeholder-shown + .label{
+		transform: translate(20px,20px);
+		opacity: 0;
+		visibility: hidden;
+	}
+	@media (max-width: 992px){
+		.contacts{
+			background:linear-gradient(rgba(10,10,23,.90),rgba(10,10,23,.95));
+		}
+		.contact-form{
+			width:80%;
+			margin:auto;
+		}
+		.cards-edge{
+			width: 70%;
+			margin:auto;
+		}
+	}
+	/* contacts ends */
+	/* FOOTER */
+	.footer-link{
+		color:#eee;
+		text-decoration: none;
+		transition: all .4s;
+	}
+	.footer-link:hover{
+		color:#777;
+		text-decoration: none;
+	}
+	/* end of FOOTER */
+</style>	
+</head>
+<body>
+<!-- header starts -->
+<header>
+<nav class="fixed-top bgopacity navbar navbar-expand-lg">
+	<a href="#" class="navbar-brand text-white px-4"><span class="motion text-uppercase">photo</span><code class="x h1">X</code></a>
+
+	<button id="close_tags" class="nav-button navbar-toggler" data-toggle="collapse" data-target="#mynav"><div class="line1"></div><div class="line2"></div><div class="line3"></div></button>
+	<div class="collapse navbar-collapse" id="mynav">
+		<ul class="navbar-nav" style="margin-left: 10px;">
+			<li class=" text-uppercase nav-item mx-3"><a class="li_links nav-link" href="#">Home</a></li>
+			<li class="text-uppercase nav-item mx-3"><a class="li_links nav-link " href="#">Langs</a></li>
+			<li class="text-uppercase nav-item mx-3"><a class="li_links nav-link " href="#">Same</a></li>
+			<li class="text-uppercase nav-item mx-3"><a class="li_links nav-link " href="#">Here</a></li>
+			<li class="text-uppercase nav-item mx-3"><a class="li_links nav-link " href="#">status</a></li>
+			<li class="text-uppercase nav-item mx-3"><a class="li_links nav-link " href="#">About</a></li>
+		</ul>
+	</div>
+</nav>
+		<div class="banner text-md-right text-center text-light">
+			<h1 class="titles display-4 head">Welcome to <span class="text-uppercase colors">photo</span><span class="display-3">X</span></h1>
+			<p class="paragraph lead">We are here to break the rules ShadowDevs comments</p>
+		</div>
+</header>
+<!-- header Ends -->
+<!-- title starts-->
+<section>
+		<div class="container-fluid bg-dark">
+			<div class="row">
+				<div class="col text-center text-white my-5">
+					<h1 class="display-3 text-uppercase mb-3">Our mission</h1>
+					<div style="width: 200px; margin:auto; border:2px groove; background-color:white; "></div>
+					<p class="lead mt-4">Lorem lorem is about to hint his house among  us inside our world for us lorem is about to<br> hint his house among us inside our world for us</p>
+				</div>
+			</div>
+			<div class="row text-white">
+				<div class="col-md-4 text-center mb-5">
+					<i class="fas fa-cogs text-danger fa-5x mb-3"></i>
+					<h1 class="font-weight-light">Creativity</h1>
+					<p class="lead">Lorem lorem is about to hint his house among  us inside our world for us lorem is about to hint his house among us inside our world for us</p>
+				</div>
+				<div class="col-md-4 text-center mb-5">
+					<i class="fas fa-thumbs-up text-danger fa-5x mb-3"></i>
+					<h1 class="font-weight-light">Supports</h1>
+					<p class="lead">Lorem lorem is about to hint his house among  us inside our world for us lorem is about to hint his house among us inside our world for us</p>
+				</div>
+				<div class="col-md-4 text-center mb-5">
+					<i class="far fa-handshake text-danger fa-5x mb-3"></i>
+					<h1 class="font-weight-light">Experiance</h1>
+					<p class="lead">Lorem lorem is about to hint his house among  us inside our world for us lorem is about to hint his house among us inside our world for us</p>
+				</div>
+			</div>
+		</div>	
+</section>
+<!-- title Ends-->
+<!-- Camera animation starts -->
+<section class="bg-dark p-5">
+		<div class="container">
+			<div class="row"
+>				<div class="col-lg-5 text-center">
+					<img src="images/camera.png" class="img-fluid img-customer" width="300">
+				</div>
+				<div class="col-lg-7 text-white text-center paragraph-anim">
+				<h1>The standard protocol</h1><br>	
+					<p class="lead">
+						The PhotoX is developed in 2020
+						among the human race for taking the pic of it and never let it happen
+						The PhotoX is developed in 2020
+						among the human race for taking the pic of it and never let it happen
+					</p>
+				</div>
+			</div>
+		</div>
+</section>
+<!-- Camera animation Ends -->
+<!-- photo collectionn starts -->
+<section>
+		<div class="container-fluid pt-5 bg-secondary">	
+			<div class="row text-center">
+				<div class="col">
+					<h1 class="text-white font-weight-light">Collection</h1>
+					<hr style="width: 130px; background-color:white; height: 3px;">
+					<p class="lead text-white">We are here to help among human gens for the best quality of human generation human gens for the best quality of human generation</p>
+				</div>
+			</div>
+			<div class="row pt-5 justify-content-center">
+				<div class="col-lg-4  mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/nature.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">This is the nice nature</h5>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/wedding.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">wedding cars</h5>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/party.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">party missions</h5>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/business.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">business styles and attribs</h5>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/fashion.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">Fashion style</h5>
+						</div>	
+					</div>
+				</div>
+				<div class="col-lg-4 mb-3 col-sm-6">
+					<div class="card head">
+							<img src="images/family.jpeg" class="card-img">
+						<div class="card-img-overlay">
+							<h5 class="img-sub text-white">Family relate</h5>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+</section>
+
+<!-- photo collection Ends-->
+<!-- photo khezak starts-->
+<section>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col text-center text-secondary mt-5">
+					<h1 class="display-3">Gallary</h1>	
+					<hr style="width: 160px; background-color: gray; height: 5px;">
+					<p class="lead">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div>
+			</div>
+			<ul class="list-inline text-center py-5">
+				<li class="list-inline-item custome-line" data-filter="All" >All<span class="mx-5" >/</span></li>
+				<li class="list-inline-item custome-line" data-filter="New" >New<span class="mx-5" >/</span></li>
+				<li class="list-inline-item custome-line" data-filter="Free" >Free<span class="mx-5" >/</span></li>
+				<li class="list-inline-item custome-line" data-filter="Pro" >Pro</li>
+			</ul>
+			<div class="container-fluid">
+				<div class="d-flex flex-wrap justify-content-center">
+					<div class="filter New"><img src="images/img1.jpeg" width="300px"></div>
+					<div class="filter Free"><img src="images/img2.jpeg" width="300px"></div>
+					<div class="filter New"><img src="images/img3.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img4.jpeg" width="300px"></div>
+					<div class="filter Free"><img src="images/img5.jpeg" width="300px"></div>
+					<div class="filter Free"><img src="images/img6.jpeg" width="300px"></div>
+					<div class="filter Free"><img src="images/img7.jpeg" width="300px"></div>
+					<div class="filter Free"><img src="images/img8.jpeg" width="300px"></div>
+					<div class="filter New"><img src="images/img9.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img10.jpeg" width="300px"></div>
+					<div class="filter New"><img src="images/img11.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img12.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img13.jpeg" width="300px"></div>
+					<div class="filter New"><img src="images/img14.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img15.jpeg" width="300px"></div>
+					<div class="filter Pro"><img src="images/img16.jpeg" width="300px"></div>
+				</div>
+			</div>
+		</div>
+</section>
+<!-- photo khezak Ends-->
+<!-- start of gallary -->
+<section class="mt-5">
+	<div class="container-fluid" style="background-color: #222;">
+		<div class="row">
+			<div class="col-sm-6 mx-auto text-white text-center my-3">
+				<h1 class="display-4 mt-5">Happy customers</h1>
+				<hr class="mt-4" style="background-color:#bbb; height: 5px; width: 260px;">
+				<p class="lead text-uppercase mt-5">
+				ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris mollit anim id est laborum.
+				</p>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-6 mx-auto">
+				<div class="carousel slide" data-ride="carouse" id="carousel-item">
+					<div class="carousel-indicators">
+						<li class="active" data-target="#carousel-item" data-slide-to="0"></li>
+						<li data-target="#carousel-item" data-slide-to="1"></li>
+						<li data-target="#carousel-item" data-slide-to="2"></li>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active text-center">
+							<img src="images/customer1.jpeg" class="m-5 text-center img-fluid rounded-circle" width="150px">
+							<blockquote class="blockquote text-light">
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident mollit anim id est laborum.
+							</blockquote>	
+							<h5 class="text-light text-uppercase mb-5">Monica</h5>
+							<ul class="list-inline">
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+							</ul>
+						</div>	
+						<div class="carousel-item text-center">
+							<img src="images/customer2.jpeg" class="m-5 text-center img-fluid rounded-circle" width="150px">
+							<blockquote class="blockquote text-light">
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident mollit anim id est laborum.
+							</blockquote>	
+							<h5 class="text-light text-uppercase mb-5">Baaqer</h5>
+							<ul class="list-inline">
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+							</ul>
+						</div>
+						<div class="carousel-item text-center">
+							<img src="images/customer3.jpeg" class="m-5 text-center img-fluid rounded-circle" width="150px">
+							<blockquote class="blockquote text-light">
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident mollit anim id est laborum.
+							</blockquote>	
+							<h5 class="text-light text-uppercase mb-5">Zaker</h5>
+							<ul class="list-inline">
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+								<li class="list-inline-item mb-5">
+									<i class="fas fa-star text-warning"></i>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Ends of gallary -->
+<!-- start of pricing -->
+<section class="bg-light pb-5">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col text-center text-secondary mt-5">
+				<h1 class="display-3">Join Us</h1>	
+				<hr style="width: 260px; background-color: gray; height: 5px;">
+				<p class="lead">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 cards-edge text-center">
+				<div class="card bground text-light m-4 card-1">
+					<h5 class="font-weight-bold my-5">Monthly MemberShip</h5>
+					<h3 class="display-4 font-weight-bold">$19</h3>
+					<ul class="list-unstyled">
+						<li class="py-3 border-bottom w-50 m-auto">Photoshop</li>
+						<li class="py-3 border-bottom w-50 m-auto">After Effect</li>
+						<li class="py-3 border-bottom w-50 m-auto">Graphic Design</li>
+						<li class="py-3 border-bottom w-50 m-auto border-0">Video Manage</li>
+						<li class="my-4 links"><a href="#" class="btn text-light">SIGN UP!</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-4 cards-edge text-center">
+				<div class="card bground text-light m-4 card-2">
+					<h3 class="my-5">Unlimited Access</h3>
+					<h3 class="display-4 font-weight-bold">$499</h3>
+					<ul class="list-unstyled">
+						<li class="py-3 border-bottom w-50 m-auto">Photoshop</li>
+						<li class="py-3 border-bottom w-50 m-auto">After Effect</li>
+						<li class="py-3 border-bottom w-50 m-auto">Graphic Design</li>
+						<li class="py-3 border-bottom w-50 m-auto">Video Manage</li>
+						<li class="py-3 border-bottom w-50 m-auto border-0">Web Designing</li>
+						<li class="my-4 links"><a href="#" class="btn text-light">SIGN UP!</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-4 cards-edge text-center">
+				<div class="card bground text-light m-4 card-3">
+					<h5 class="font-weight-bold my-5">Annual Membership</h5>
+					<h3 class="display-4 font-weight-bold">$199</h3>
+					<ul class="list-unstyled">
+						<li class="py-3 border-bottom w-50 m-auto">Photoshop</li>
+						<li class="py-3 border-bottom w-50 m-auto">After Effect</li>
+						<li class="py-3 border-bottom w-50 m-auto">Graphic Design</li>
+						<li class="py-3 border-bottom w-50 m-auto border-0">Video Manage</li>
+						<li class="my-4 links"><a href="#" class="btn text-light">SIGN UP!</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="my-5 text-center">
+			<h1>Thanks for being with Us!</h1>
+			<i class="mt-3 fas fa-coffee fa-3x"></i>
+		</div>
+	</div>
+</section>
+<!-- End of pricing -->
+<!-- CONTACT -->
+<section class="contacts p-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-5 pb-4">
+				<h3 class="display-4 text-white">Get In Touch</h3>
+				<form class="contact-form">
+					<div class="form-group py-5">
+						<input class="form-control input" type="text" placeholder="Name" />
+						<label class="label" for="name" >Name</label>
+					</div>
+					<div class="form-group py-5">
+						<input type="email" class="form-control input" placeholder="Email" />
+						<label for="email" class="label">Email Address</label>
+					</div>
+					<div class="form-group mt-5">
+						<input type="checkbox" checked="checked" />
+						<label class="text-white font-weight-light">Anouncement</label>
+					</div>
+					<button class="btn btn-block p-2 submit-btn font-weight-bold">SUBSCRIBE</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end of contact -->
+<!-- Footer starts -->
+<section class="bg-dark p-5">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 text-white">
+					<h3>About us</h3>
+					<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+				</div>
+				<div class="col-lg-2 col-sm-6">
+					<h3 class="text-light" >Visit Us</h3>
+						<ul class="list-unstyled">
+							<li><a href="#" class="footer-link" >HOME</a></li>
+							<li><a href="#" class="footer-link" >MISSION</a></li>
+							<li><a href="#" class="footer-link" >COLLECTION</a></li>
+							<li><a href="#" class="footer-link" >GALLERY</a></li>
+							<li><a href="#" class="footer-link" >CUSTOMER</a></li>
+							<li><a href="#" class="footer-link" >PRICING</a></li>
+							<li><a href="#" class="footer-link" >CONTACT</a></li>
+						</ul>
+				</div>
+				<div class="col-lg-2 col-sm-6">
+					<h3 class="text-light" >Need Help?</h3>
+						<ul class="list-unstyled">
+							<li><a href="#" class="footer-link" >CUSTOMER SERVICE</a></li>
+							<li><a href="#" class="footer-link" >ONLINE CHATE</a></li>
+							<li><a href="#" class="footer-link" >COLLECTION</a></li>
+							<li><a href="#" class="footer-link" >SUPPORT</a></li>
+							<li><a href="#" class="text-info">photoX@gmail.com</a></li>
+						</ul>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<h3 class="text-white">Stay Connected</h3>
+						<p class="text-white small"> 
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						</p>
+					<form class="my-5">
+						<div class="input-group mb-2">
+							<input class="form-control" type="text" name="txt" />
+							<input type="submit" class="form-group-append btn btn-danger" name="btn" value="SIGN-UP">
+						</div>
+						<ul class="list-unstyled">
+							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square fa-2x text-primary"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-google-plus fa-2x text-danger"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-2x text-danger"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-2x text-info"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-youtube fa-2x text-danger"></i></a></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<hr style="width: 90%; background-color:white;">
+					<span class="d-block text-light font-weight-light text-center">&copyCopyright.All Rights Reserved</span>
+				</div>
+			</div>
+		</div>
+</section>
+<!-- Footer Ends -->
+</body>
+</html>
